@@ -907,6 +907,21 @@ font-size: var(--small-font-size);
   bottom: 5rem;
 }
 
+/* Styles CSS pour les points indicateurs de la pagination */
+.swiper-pagination-bullet {
+  width: 8px; /* Largeur du point indicateur */
+  height: 8px; /* Hauteur du point indicateur */
+  background-color: #007BFF; /* Couleur de fond du point */
+  opacity: 0.5; /* Opacité par défaut du point */
+  margin: 0 5px; /* Marge horizontale entre les points */
+  border-radius: 50%; /* Bordure arrondie pour créer un cercle */
+  cursor: pointer; /* Curseur pointeur au survol */
+}
+
+/* Style du point actif (sélectionné) */
+.swiper-pagination-bullet-active {
+  opacity: 1; /* Opacité du point actif */
+}
 /*========== SCROLL BAR ==========*/
 
 ::-webkit-scrollbar{
@@ -929,6 +944,12 @@ font-size: var(--small-font-size);
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
   }
+  .portfolio{
+    max-width: 1000px; /* Largeur maximale du swiper */
+    overflow: hidden;
+    justify-content: center;
+    margin-left: 15%;
+   }
   .nav__menu{
     padding: 2rem .25rem 4rem;
   }
