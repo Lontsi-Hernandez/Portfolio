@@ -26,7 +26,7 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link">
+                        <a href="#home" class="nav__link active-link">
                             <i class="fas fa-home nav__icon"></i> Home
                         </a>
                     </li>
@@ -52,13 +52,15 @@
                     </li>
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
-                            <i class="fas fa-envelope nav__icon"></i> Contact me
+                            <i class="fas fa-envelope nav__icon"></i> Contact
                         </a>
                     </li>
                 </ul>
                 <i class="fas fa-door-open" id="nav-close"></i>
             </div>
             <div class="nav__btns">
+                <!--theme change-->
+                <i class="fas fa-moon change-theme" id="theme-button"></i>
                 <div class="nav__toogle" id="nav-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -511,66 +513,64 @@
                 <h2 class="section__title">Project</h2>
                 <span class="section__subtitle">Most recent work</span>
                 <div class="portfolio__container container swiper-container">
-                   <div class="swiper-wrapper">
-                    <!--==================== PORTFOLIO 1 ====================-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio1.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio_data">
-                            <h3 class="portfolio_title">Find dog</h3>
-                            <p class="portfolio_description">Site web de recherche de chien de qualite </p>
-                            <h6 style="color: blue;padding-bottom: 2%;margin-left: 1%;">Loading ...</h6>
-                            <a href="https://find-dog.vercel.app" class="button button--flex button--small portofilio__button">
-                                Demo
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                    <div class="swiper-wrapper">
+                        <!--==================== PORTFOLIO 1 ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/portfolio1.jpg" alt="" class="portfolio__img">
+                            <div class="portfolio_data">
+                                <h3 class="portfolio_title">Find dog</h3>
+                                <p class="portfolio_description">Site web de recherche de chien de qualité</p>
+                                <h6 style="color: blue; padding-bottom: 2%; margin-left: 1%;">Loading ...</h6>
+                                <a href="https://find-dog.vercel.app" class="button button--flex button--small portofilio__button">
+                                    Demo
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!--==================== PORTFOLIO 2 ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/portfolio2.jpg" alt="" class="portfolio__img">
+                            <div class="portfolio_data">
+                                <h3 class="portfolio_title">Application for managing staff between and out</h3>
+                                <p class="portfolio_description">It's called maiga360, This application allows the director of the company to have Real-time monitoring of the entries and exits of its employees</p>
+                                <a href="https://github.com/Lontsi-Hernandez/maiga360" class="button button--flex button--small portofilio__button">
+                                    Demo
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!--==================== PORTFOLIO 3 ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/portfolio3.jpg" alt="" class="portfolio__img">
+                            <div class="portfolio_data">
+                                <h3 class="portfolio_title">Immo-Prime</h3>
+                                <p class="portfolio_description">Property management application will allow the user to easily find a home and give greater visibility to the owner of housing</p>
+                                <a href="#" class="button button--flex button--small portofilio__button">
+                                    Demo
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-
-                    <!--==================== PORTFOLIO 2 ====================-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio2.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio_data">
-                            <h3 class="portfolio_title">Application for managing staff between and out</h3>
-                            <p class="portfolio_description">It's called maiga360, This application allows the director of the company to have 
-                                Real-time monitoring of the entries and exits of its employees</p>
-                            <a href="https://github.com/Lontsi-Hernandez/maiga360" class="button button--flex button--small portofilio__button">
-                                Demo
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--==================== PORTFOLIO 2 ====================-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio3.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio_data">
-                            <h3 class="portfolio_title">Immo-Prime</h3>
-                            <p class="portfolio_description">Property management application will allow the user to easily find a home and give greater visibility to the owner of housing</p>
-                            <a href="#" class="button button--flex button--small portofilio__button">
-                                Demo
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                   </div> 
-                   <!--pagnation-->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
+            
 
             <!--==================== PROJECT IN MIND ====================-->
-            <section class="project section">
-
-            </section>
-
-            <!--==================== TESTIMONIAL ====================-->
+           <!--<section class="project section"> </section>
             <section class="testimonial section">
                 
             </section>
+        --> 
+
+            
+
+            <!--==================== TESTIMONIAL ====================-->
+            
 
             <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
@@ -630,7 +630,7 @@
                         <div>
                             <a href="@" class="button button--flex">
                                 Send Message
-                                <i class="fas fa-arrow-right contact__icon"></i>
+                                <ion-icon name="send-outline" class="button__icon"></ion-icon> 
                             </a>
                         </div>
                     </form>
@@ -653,31 +653,35 @@
                             <a href="#services" class="footer__link">Services</a>
                         </li>
                         <li>
-                            <a href="#services" class="footer__link">Portfolio</a>
+                            <a href="#services"  class="footer__link">Portfolio</a>
                         </li>
                         <li>
-                            <a href="#services" class="footer__link">Contact me</a>
+                            <a href="#services"  class="footer__link">Contact me</a>
                         </li>
                     </ul>
 
                     <div class="footer__socials">
-                        <a href="#" class="footer__social">
+                        <a href="#" class="footer__social"  target="_blank">
                             <i class="fa-brand fa-facebook contact__icon"></i>
                         </a>
-                        <a href="#" class="footer__social">
+                        <a href="#" class="footer__social" target="_blank">
                             <i class="fas fa-instagram contact__icon"></i>
                         </a>
-                        <a href="#" class="footer__social">
+                        <a href="#" class="footer__social" target="_blank">
                             <i class="fas fa-github contact__icon"></i>
                         </a>
                     </div>
                 </div>
+
+                <p class="footer__copy">&#169; Hernandez Lontsi. All right reserved</p>
             </div>
          </footer>
         </footer>
         
         <!--==================== SCROLL TOP ====================-->
-        
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="fas fa-arrow-up scrollup__icon"></i> 
+        </a>
 
         <!--==================== SWIPER JS ====================-->
         <script src="assets/js/swiper.js" defer></script>

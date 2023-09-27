@@ -89,7 +89,7 @@ modalCloses.forEach((modalClose) => {
             modalView.classList.remove('active-modal');
         })
     })
-})
+});
 /*==================== PORTFOLIO SWIPER  ====================*/
 
 
@@ -98,11 +98,81 @@ modalCloses.forEach((modalClose) => {
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
+const sections = document.querySelectorAll('section[id]'); // Ajout de la virgule pour déclarer la variable "sections"
+
+function scrollActive() {
+  const scrollY = window.pageYOffset; // Correction de la faute de frappe ("pagevoffset" à "pageYOffset")
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 58;
+    const sectionId = current.getAttribute("id"); // Correction de la faute de frappe ("sectionId" au lieu de "sectionId")
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link'); // Ajout de la concaténation correcte
+    } else {
+      document.querySelector('.nav__menu a[href=' + sectionId + ']').classList.remove('active-link'); // Ajout de la concaténation correcte
+    }
+  });
+} 
+
+window.addEventListener('scroll', scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 
+function scrollHeader(){
 
+ 
+    
+    const nav =  document.getElementById('header');
+    
+    if(this.scrolly >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header');
+    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag if(this.scrolly >= 200) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+    
+  window.addEventListener('scroll', scrollHeader);
+}
 /*==================== SHOW SCROLL UP ====================*/ 
 
-
+function scrollUp(){
+     const scrollUp = document.getElementById('scroll-up');
+    
+     // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the sc if(this.scrolly >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scr
+     if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll');
+    
+    
+    } 
+    
+     window.addEventListener('scroll', scrollUp)
 /*==================== DARK LIGHT THEME ====================*/ 
+const themeButton = document.getElementById('theme-button');
+
+const darkTheme = 'dark-theme';
+
+const iconTheme = 'fa-sun';
+
+// Previously selected topic (if user selected)
+
+const selectedTheme = localstorage.getItem('selected-theme');
+
+const selectedIcon = localStorage.getItem('selected-icon');
+
+// we obtain the current theme that the interface has by validating the dark-theme class
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? "fa-moon" : "fa-sun";
+
+
+if (selectedTheme) {
+
+document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'] (darkTheme)
+themeButton.classList[selectedIcon === 'fa-moon' ? "add" : 'remove'](iconTheme)
+
+}
+
+themeButton.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toogle(iconTheme)
+
+    localStorage.setItem('selected-theme',getCurrentTheme())
+    localStorage.setItem('selected-icon',getCurrentIcon())
+});
